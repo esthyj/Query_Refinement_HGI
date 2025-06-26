@@ -116,7 +116,7 @@ for i in range(len(questions)):
 
     if response_a =="X" and  q.iloc[1]== '관련없음':
         ls[i] = 1
-    elif response_a == 'M' and q.iloc[1]== '지원업무무':
+    elif response_a == 'M' and q.iloc[1]== '지원업무':
         ls[i] = 1
     elif response_a == 'P' and q.iloc[1]== '업무분장':
         ls[i] = 1
