@@ -1,6 +1,12 @@
-# ✨ Query Refinement API
+# ✨ Query Refinement
 
-A lightweight, powerful API for refining and rewriting user queries — optimized for RAG (Retrieval-Augmented Generation) systems.
+**Position:** Intern at Hanwha General Insurance
+**Project Duration:** 2025.06.16 - 2025.06.26
+**Project Title:** User Query Refinement
+**Project Description:**
+1. Detection of ambiguity in user queries
+2. Refinement and clarification of ambiguous queries
+3. Classification of user query intent
 
 ---
 
