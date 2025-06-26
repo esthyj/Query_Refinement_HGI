@@ -8,10 +8,6 @@ import pandas as pd
 from datetime import datetime
 now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-# 모델 이름 (예: Qwen-7B-Chat 사용)
-# model_name = "dnotitia/Smoothie-Qwen2.5-14B-Instruct"
-# model_name = "dnotitia/Smoothie-Qwen3-14B"
-# model_name = "dnotitia/Smoothie-Qwen3-8B"
 model_name = "dnotitia/Smoothie-Qwen3-14B"
 
 # GPU 메모리 분산 설정
@@ -109,9 +105,9 @@ for i in range(len(questions)):
     try:
         response = json.loads(re.search(r"(\{.*?})", llm_response, re.DOTALL).group(0))
         if response["A"]=='X' and len(response["B"])!=2:
-            response={"A": "X", "B": [query+' 담당자', query+' 방법!']}
+            response={"A": "X", "B": [query+' 담당자', query+' 방법']}
     except:
-        response={"A": "X", "B": [query+' 담당자', query+' 방법!']}
+        response={"A": "X", "B": [query+' 담당자', query+' 방법']}
     response_a=response["A"]
     questions_b=response["B"]
     end = time.time()
@@ -120,7 +116,7 @@ for i in range(len(questions)):
 
     if response_a =="X" and  q.iloc[1]== '관련없음':
         ls[i] = 1
-    elif response_a == 'M' and q.iloc[1]== 'HR':
+    elif response_a == 'M' and q.iloc[1]== '지원업무무':
         ls[i] = 1
     elif response_a == 'P' and q.iloc[1]== '업무분장':
         ls[i] = 1
@@ -129,12 +125,8 @@ for i in range(len(questions)):
         answers.loc[len(answers)] = [query, q.iloc[1], response["A"], response["B"][0], response["B"][1], end-start]
     else: 
         answers.loc[len(answers)] = [query, q.iloc[1], response["A"], response["A"], response["A"], end-start]
-    
-    #재질문
 
 print("Accuracy :", round(sum(ls)/len(ls), 3))
-# print("소요시간(초) :", round(end-start, 3))
-# print("질문 1개당 소요시간 :", round((end-start)/len(questions), 3))
 
 filename = f"test_{now_str}.csv"
 answers.to_csv(filename)
