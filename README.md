@@ -23,7 +23,7 @@
 ## 🔎 Results
 ||Original RAG Pipeline|3Task_LLM|NL Classification
 |---|---|---|---|
-|model|dnotitia/Smoothie-Qwen3-14B|dnotitia/Smoothie-Qwen3-14B(8bit)|klue/bert-base
+|Model|dnotitia/Smoothie-Qwen3-14B|dnotitia/Smoothie-Qwen3-14B(8bit)|klue/bert-base
 |Ambiguity Detection Accuracy(↑)|72/90 (Acc: 0.8)|-|-|
 |Clarification Suggestion Retry Rate(↓)|0.07|0||
 |Intent Classification Accuracy(↑)|[2 labels]<br>59/60 (Acc:0.98)|[3 labels]<br>74/90 (Acc:0.82)|[3 labels]<br>16/18 (Acc:0.89)|
