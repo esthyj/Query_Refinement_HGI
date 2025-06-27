@@ -20,6 +20,13 @@
 │ └─ 📜 query_refinement_2try.csv             # Test File  
 └─ 📜 README.md                                # Project overview  
 
+
+flowchart LR
+    A[Hard] -->|Text| B(Round)
+    B --> C{Decision}
+    C -->|One| D[Result 1]
+    C -->|Two| E[Result 2]
+    
 ## 🔎 Results
 ||Original RAG Pipeline|3Task_LLM|NL Classification
 |---|---|---|---|
