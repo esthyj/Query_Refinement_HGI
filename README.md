@@ -19,6 +19,11 @@
 │ ├─ 📜 dataset_3labels_class_train.csv        # Train File  
 │ └─ 📜 query_refinement_2try.csv             # Test File  
 └─ 📜 README.md                                # Project overview  
+
+```mermaid
+  classDiagram
+    classA <|--* classB : 2 way
+```
 '''
 mermaid
 
